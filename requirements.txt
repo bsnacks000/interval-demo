@@ -1,0 +1,37 @@
+# django core and 3rd party plugins
+Django==2.0.5
+django-bootstrap3
+django-import-export==1.0.0
+
+# django rest api
+djangorestframework==3.8.2
+coreapi==2.3.3
+django-filter==1.1.0
+markdown==2.6.11
+
+#database
+psycopg2==2.7.4
+psycopg2-binary
+
+# redis and celery
+redis==2.10.6
+celery==4.1.0
+
+#server
+gunicorn==19.8.1
+whitenoise==3.3.1
+
+# config utils
+dj-database-url==0.5.0
+python-decouple==3.1
+
+# testing
+factory-boy==2.11.1
+django-nose==1.4.5
+
+
+# calcs
+pandas==0.22
+
+# plots
+plotly
