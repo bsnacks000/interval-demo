@@ -12,6 +12,12 @@ BOOLEAN_CHOICE = (
     (0, 0)
 )
 
+
+PUMP_CHOICE = (
+    (1, 1),
+    (2, 2)
+)
+
 RETROFIT_NUMBER = (
     (1, 1),
     (3, 3)
@@ -35,7 +41,7 @@ class Pump(models.Model):
     date_time = models.DateTimeField()
     motor_on = models.IntegerField(choices=BOOLEAN_CHOICE)
     motor_off = models.IntegerField(choices=BOOLEAN_CHOICE)
-    pump = models.IntegerField(choices=BOOLEAN_CHOICE)
+    pump = models.IntegerField(choices=PUMP_CHOICE)
 
     def __str__(self):
         return '<Pump: {}, {}, {}>'.format(self.bdbid, self.pre_post, self.date_time)

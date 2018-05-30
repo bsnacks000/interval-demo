@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'import_export',
     'bootstrap3',
+    'crispy_forms',
 
     'rest_framework.authtoken',
     'rest_framework',
