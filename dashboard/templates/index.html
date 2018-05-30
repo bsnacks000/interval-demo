@@ -7,8 +7,23 @@
   Home
 {% endblock %}
 
+{% block head %}
+  {{ block.super }}
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock %}
+
 {% block content %}
-  <h2>Index</h2>
-  <p>User chooses between baseline and option-c. The subsequent Form view gives query specs. Form fields are set and data requested asynchronously using ajax/fetch. </p>
-  <p> Bema Requests are processed in a task queue and chart results and data are pushed to the template. </p>
+  <h2>Boiler and Pump Charts</h2>
+    <!-- forms and chart divs here-->
+    <div class="row">
+        <div id="plotly-chart"></div>
+    </div>
+
+{% endblock %}
+
+
+{% block custom_js %}
+    <script src="{% static 'js/plots.js' %}"></script>
+    <script src="{% static 'js/ajax_request.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 {% endblock %}
