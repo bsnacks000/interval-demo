@@ -35,5 +35,5 @@ class BoilerSerializer(serializers.HyperlinkedModelSerializer):
         model = Boiler
         fields = [
             'bdbid', 'pre_post', 'date_time', 'pre_post', 'date_time', 'second_on',
-            'usage_ccf', 'temperature', 'hdd_60', 'hdd_62_5', 'hdd_65', 'hdd_67_5', 'hdd_70'
+            'usage_ccf', 'temperature', 'hdd_60', 'hdd_62_5', 'hdd_65', 'hdd_67_5', 'hdd_70', 'boiler'
         ]

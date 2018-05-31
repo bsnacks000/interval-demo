@@ -55,6 +55,7 @@ class Boiler(models.Model):
     hdd_65 = models.FloatField()
     hdd_67_5 = models.FloatField()
     hdd_70 = models.FloatField()
+    boiler = models.IntegerField()
 
     def __str__(self):
         return '<Boiler: {}, {}, {}>'.format(self.bdbid, self.pre_post, self.date_time)
