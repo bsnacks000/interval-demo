@@ -18,7 +18,7 @@ class BuildingResource(CustomModelResource):
     class Meta:
         model = Building
         exclude = ('id', )
-
+        include_fields = ['bdbid']
 
 class PumpResource(CustomModelResource):
 

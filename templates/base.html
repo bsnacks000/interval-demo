@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-{% load bootstrap3 %}
 {% load static %}
+{% load bootstrap3 %}
+
 
 <html lang="en">
   <head>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
     {# Load CSS and JavaScript #}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
@@ -48,7 +55,7 @@
                         <li>
                             <a href="{{ admin_url }}">
                                 <span class="glyphicon glyphicon-dashboard"></span>
-                                Administration
+                                To Admin
                             </a>
                         </li>
                     {% endif %}
@@ -62,15 +69,15 @@
                         </li>
                     {% endif %}
                     {% else %}
-                        {% url "login" as login_url %}
-                        {% if login_url %}
-                          <li>
-                              <a href="{{ login_url }}">
-                                  <span class="glyphicon glyphicon-log-in"></span>
-                                  Login
-                              </a>
-                          </li>
-                        {% endif %}
+                      {% url "login" as login_url %}
+                      {% if login_url %}
+                        <li>
+                          <a href="{{ login_url }}">
+                            <span class="glyphicon glyphicon-log-in"></span>
+                            Login
+                          </a>
+                        </li>
+                      {% endif %}
                   {% endif %}
                 {% endblock %}
             </ul>
@@ -82,8 +89,10 @@
       <div class="container">
         {% block breadcrumbs_container %}
           <ol class="breadcrumb">
-            <li><a href="{% url 'dashboard:index' %}">dashboard Home</a></li>
-            {% block breadcrumbs %}{% endblock %}
+            <li><a href="{% url 'dashboard:index' %}"> About </a></li>
+            <li><a href="{% url 'dashboard:boilers' %}"> Boilers </a></li>
+            <li><a href="{% url 'dashboard:pumps' %}"> Pumps </a></li>
+            <!--{% block breadcrumbs %}{% endblock %}-->
           </ol>
         {% endblock %}
 

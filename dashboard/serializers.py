@@ -13,9 +13,10 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 class BuildingSerializer(serializers.HyperlinkedModelSerializer):
 
+    bdbid = serializers.HyperlinkedRelatedField(view_name='dashboard:building-detail', read_only=True)
     class Meta:
         model = Building
-        fields = '__all__'
+        fields = ['bdbid', 'building_name', 'retrofit_type']
 
 
 class PumpSerializer(serializers.HyperlinkedModelSerializer):

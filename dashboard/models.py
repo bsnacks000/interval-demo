@@ -21,7 +21,7 @@ RETROFIT_NUMBER = (
 
 class Building(models.Model):
 
-    bdbid = models.IntegerField(unique=True)
+    bdbid = models.IntegerField(primary_key=True)
     building_name = models.CharField(max_length=150)
     retrofit_type = models.CharField(max_length=150, choices=RETROFIT_CHOICES)
 
@@ -31,7 +31,7 @@ class Building(models.Model):
 
 class Pump(models.Model):
 
-    bdbid = models.ForeignKey('Building', to_field='bdbid', on_delete=models.CASCADE)
+    bdbid = models.ForeignKey('Building', on_delete=models.CASCADE)
     pre_post = models.IntegerField(choices=RETROFIT_NUMBER)
     date_time = models.DateTimeField()
     motor_on = models.IntegerField(choices=BOOLEAN_CHOICE)
@@ -44,7 +44,7 @@ class Pump(models.Model):
 
 class Boiler(models.Model):
 
-    bdbid = models.ForeignKey('Building', to_field='bdbid', on_delete=models.CASCADE)
+    bdbid = models.ForeignKey('Building', on_delete=models.CASCADE)
     pre_post = models.IntegerField(choices=RETROFIT_NUMBER)
     date_time = models.DateTimeField()
     second_on = models.IntegerField()

@@ -7,7 +7,7 @@ function boiler_chart(target_id, data){
     console.log('boiler chart!!')
 }
 
-function pumps_chart(target_id, data){
+function pump_chart(target_id, data){
   // use the data to generate the plot for the the target_id string
   console.log('pumps chart!! ')
 }

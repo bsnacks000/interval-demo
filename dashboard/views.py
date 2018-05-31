@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from .forms import BuildingForm
 
 @login_required
 def index_view(request):
@@ -7,16 +8,16 @@ def index_view(request):
     """
     return render(request, 'index.html')
 
+@login_required
+def boiler_view(request):
+    """ render the projects index
+    """
+    form = BuildingForm(retrofit_type='Boiler')
+    return render(request, 'boiler.html', context={'form':form})
 
 @login_required
-def boiler_chart_view(request):
-    """ render the boiler chart template
+def pump_view(request):
+    """ render the projects index
     """
-    return render(request, 'boiler.html')
-
-
-@login_required
-def pump_chart_view(request):
-    """ render the pump_chart_view
-    """
-    return render(request, 'pump.html')
+    form = BuildingForm(retrofit_type='Pump')
+    return render(request, 'pump.html', context={'form':form})

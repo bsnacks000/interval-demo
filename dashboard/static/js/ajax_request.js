@@ -6,6 +6,7 @@ function ajax_request(endpoint, chart_method, target_id){
     method:"GET",
     url: endpoint,
     success: function(data){
+      console.log(data)
       chart_method(target_id, data);
     },
     error: function(error_data){

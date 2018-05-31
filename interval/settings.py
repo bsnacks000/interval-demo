@@ -161,3 +161,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # import-export
 IMPORT_EXPORT_USE_TRANSACTIONS = True
+
+# crispy
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
