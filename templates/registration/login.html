@@ -6,15 +6,25 @@
 
   {# form here #}
   <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% buttons %}
-      <button type="submit">Login</button>
-    {% endbuttons %}
-  </form>
-  <div>
-    <p> <a href="{% url 'password_reset' %}">forgot your password?</a> </p>
+
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-4'>
+        <form method="post">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          {% buttons %}
+            <button type="submit">Login</button>
+          {% endbuttons %}
+        </form>
+      </div>
+    </div>
+    <div class=row>
+      <p> <a href="{% url 'password_reset' %}">forgot your password?</a> </p>
+    </div>
+
   </div>
+
+
 
 {% endblock %}
